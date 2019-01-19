@@ -15,9 +15,9 @@
 
     <title>Mizuxe</title>
   </head>
-  <body>
+  <body id="home" data-spy="scroll" data-target="#main-nav">
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
+    <nav id="main-nav" class="navbar navbar-expand-md navbar-light fixed-top py-4">
       <div class="container">
         <a href="#home" class="navbar-brand">
           <img src="img/mlogo.png" width="50" height="50" alt="Mizuxe logo" />
@@ -352,6 +352,61 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+              <a href="#" id="no-link">
+                  <img src="img/mlogo.png" width="50" height="50" alt="Mizuxe logo" />
+                  <h3 class="d-inline align-middle">Get in Touch</h3>
+                </a>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, ratione!</p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="input-group input-group-lg mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </div>
+                  <textarea class="form-control" placeholder="Message" rows="5"></textarea>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary btn-block btn-lg">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="py-5 bg-primary text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <p class="lead">
+                Copyright &copy; <span id="year"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -370,6 +425,33 @@
     <script>
       // Get the current year for the copyright
       $("#year").text(new Date().getFullYear());
+
+      // Initialize Scrollspy
+      $('body').scrollspy({target: '#main-nav'});
+
+      // Smooth Scrolling
+      $("#main-nav a").on("click", function(e) {
+        // Check for a hash value
+        if (this.hash !== "") {
+          // Prevent default
+          e.preventDefault();
+
+          // Store hash
+          const hash = this.hash;
+
+          // Animate smooth scroll
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800,
+            function() {
+              // Add hash to URL after scroll
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>

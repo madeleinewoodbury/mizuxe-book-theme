@@ -34,6 +34,11 @@ body {
 #authors .fab {
   color: #fff; }
 
+#no-link {
+  color: black;
+  pointer-events: none;
+  cursor: default; }
+
 @media (max-width: 768px) {
   #showcase {
     min-height: 500px; }

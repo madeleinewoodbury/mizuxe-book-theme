@@ -52,6 +52,12 @@ body {
   }
 }
 
+#no-link {
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+
 // Media Queries
 @media (max-width: 768px) {
   #showcase {
