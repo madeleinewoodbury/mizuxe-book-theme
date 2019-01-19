@@ -2,7 +2,11 @@
 
 One page theme website for a book. Created with bootsrap and customized with sass.
 
-## Dependencies
+## View Page
+
+[Click to View Page](https://madeleinewoodbury.github.io/mizuxe-book-theme/)
+
+## Credits
 
 - [Font Awesome](https://fontawesome.com/?from=io)
 - [Bootstrap](https://getbootstrap.com/)
